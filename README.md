@@ -1,13 +1,17 @@
 ## MagicMirror
 Framework for easily creating native-looking Adobe controls:
+
 ![Toolbar](https://thumbs.gfycat.com/ScratchyGoodBarebirdbat-size_restricted.gif)
 
 Reads and updates current app theme:
+
 ![Theme Updates](https://thumbs.gfycat.com/NippyFrayedDassierat-size_restricted.gif)
 
 Include adobeStyle.css and adobeMirror.js to your html:
 
-`<link href="./myTstack/adobeStyle.css" type="text/css" rel="stylesheet">
+```html
+
+<link href="./myTstack/adobeStyle.css" type="text/css" rel="stylesheet">
 ...
 <body>
 ...
@@ -15,13 +19,17 @@ Include adobeStyle.css and adobeMirror.js to your html:
 <!-- adobeMirror must be below CSInterface -->
 <script src="./myTstack/adobeMirror.js" type="text/javascript"></script>
 ...
-</body>`
+</body>
+```
 
 Based on class names:
 
-`  <div class="adobe adobe-btn">
+```html
+
+<div class="adobe adobe-btn">
     <!-- Icon inside button -->
     <span class="fa fa-adjust fa-lg"></span>
-  </div>`
+  </div>
+```
 
-`adobe` is a required class for all elements and the prefix, similar to FontAwesome.
+`adobe` is a required class for all elements and the prefix, similar to FontAwesome. The idea is to be able to easily place elements without needing to worry about simple aesthetics -- hovering, theme, eventListeners, etc.
