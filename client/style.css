@@ -1,0 +1,23 @@
+html {
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+  --nav-color: #161616;
+  --bg-color: #232323;
+  background-color: var(--bg-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0px .5rem;
+  overflow: hidden;
+}
+
+#content {
+  margin: 1rem 0px;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,285 @@
+html {
+  font-size: 12px;
+}
+
+:root {
+  --colorPanelBG: #323232;
+
+  --btnBorder: 1.5px solid transparent;
+  --borderRadius: 3px;
+
+  --inputHeight: 2rem;
+  --inputWidthMD: 3rem;
+  --inputWidthLG: 4rem;
+  --inputWidth1X: 100%;
+
+  --btnPadding: .0625rem .5rem;
+  --btnMargin: auto .035rem;
+  --btnHeight: 1.75rem;
+  --btnWidth: 1.25rem;
+
+  --fontSize: 10px;
+  --fontFamily: "Adobe Clean", sans-serif;
+
+  --colorInputIdle: #262626;
+  --colorInputActive: #fcfcfc;
+
+  --colorDisabled: #393939;
+  --colorFontDisabled: #525252;
+  --colorFontActive: #000000;
+  --colorFont: #b7b7b7;
+
+  --colorBorder: #3e3e3e;
+  /* --colorHoverBorder: #; */
+  --colorHover: #292929;
+  --colorActive: #1f1f1f;
+  --colorFocus: #46a0f5;
+  --colorIcon: #b4b4b4;
+}
+
+body {
+  margin: 0px 5%;
+  overflow: hidden;
+
+  background-color: var(--colorPanelBG);
+  color: var(--colorIcon);
+}
+
+#content{
+  margin-top: .93rem;
+}
+
+.divider {
+  margin: .125rem;
+  border-top: solid 1.5px #2a2a2a;
+  width: 94%;
+}
+
+.adobe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--borderRadius);
+  border: var(--border);
+}
+
+
+.adobe-btn {
+  padding: var(--btnPadding);
+  width: var(--btnWidth);
+  height: var(--btnHeight);
+  border: var(--btnBorder);
+  margin: var(--btnMargin);
+  user-select: none;
+  cursor: pointer;
+}
+
+.adobe-btn:hover {
+  border-color: var(--colorBorder);
+  background-color: var(--colorHover);
+}
+
+.adobe-btn:active {
+  background-color: var(--colorActive);
+}
+
+
+
+
+.adobe-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: .5rem 0px;
+  align-items: center;
+}
+
+.adobe-toolbar-sm {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0px;
+  align-items: center;
+}
+
+.adobe-footer {
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: .325rem 0px;
+  align-items: center;
+}
+
+.adobe-btn-corner {
+  position: relative;
+  top: .70rem;
+  left: .275rem;
+  border-style: solid;
+  border-color: red;
+  width: 0px;
+  height: 0px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-left-width: 4.5px;
+  border-bottom-width: 4.5px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+}
+
+.adobe-inputGroup-num {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+}
+
+
+
+.adobe-btn-toggle {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--borderRadius);
+  width: auto;
+  height: var(--btnHeight);
+  border: var(--border);
+  margin: auto .035rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.adobe-btn-select {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--borderRadius);
+  width: auto;
+  height: var(--btnHeight);
+  border: var(--border);
+  margin-left: .5rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+
+.adobe-upDown {
+  padding-left: .25rem;
+  padding-right: .25rem;
+  margin-right: .5rem;
+  margin-left: 0px;
+  width: auto;
+  height: 1.75rem;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1.5px;
+  border-left-width: 0px;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.adobe-upDown-Up, .adobe-upDown-Down {
+  height: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.adobe-upDown-Up {
+  margin-top: -2px;
+  margin-bottom: 1px;
+}
+
+.adobe-upDown-Down {
+  margin-bottom: 0px;
+  margin-top: 4px;
+}
+
+.adobe-input {
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: var(--borderRadius);
+  padding: .25rem .5rem;
+  height: 1.75rem;
+}
+
+.adobe-input-md {
+  width: 2.5rem;
+  margin: 0px .25rem;
+}
+
+.adobe-input-lg {
+  width: 6.75rem;
+  margin: 0px .25rem;
+}
+
+.adobe-input-2x {
+  width: 60%;
+  margin: 0px 0px;
+}
+
+.adobe-console {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: .5rem 0px .5rem 0px;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: var(--borderRadius);
+  padding: .25rem 1rem .25rem .5rem;
+  height: 1.75rem;
+  width: 100%;
+  user-select: none;
+  cursor: default;
+  overflow: hidden;
+}
+
+.no-input {
+  user-select: none;
+  cursor: default;
+}
+
+.adobe-input-num {
+  margin-right: 0px;
+  width: 3.25rem;
+  height: 1.75rem;
+  border-style: solid;
+  border-width: 1.5px;
+  border-radius: 2px 0px 0px 2px;
+  padding: .25rem .5rem;
+}
+
+.adobe-input-full {
+  width: 100%;
+}
+
+.adobe-input:focus {
+  outline-offset: 0px;
+}
+
+:focus {
+  outline-width: 0px;
+}
+
+.adobe-swatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-radius: .25rem;
+  width: .5rem;
+  height: 1.5rem;
+  border: var(--border);
+  margin: auto .25rem;
+  cursor: pointer;
+}
+
+.adobe-swatchStrip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: auto;
+}
