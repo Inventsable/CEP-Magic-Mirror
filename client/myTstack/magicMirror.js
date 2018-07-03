@@ -1,4 +1,5 @@
 // Migrate to magic mirror
+// Reorganize master object for data and color, match variables from root
 
 var cs = new CSInterface();
 var docExist;
@@ -28,28 +29,34 @@ function updateThemeWithAppSkinInfo() {
     document.body.style.backgroundColor = appInfo.panelBG;
     var htmlBody = document.getElementsByTagName("html");
     // htmlBody[0].style.backgroundColor = appInfo.panelBG;
-    htmlBody[0].style.fontSize = appInfo.baseFontSize;
-    htmlBody[0].style.fontFamily = appInfo.baseFontFamily;
-    htmlBody[0].style.color = appInfo.baseFontColor;
+    // htmlBody[0].style.fontSize = appInfo.baseFontSize;
+    // htmlBody[0].style.fontFamily = appInfo.baseFontFamily;
+    // htmlBody[0].style.color = appInfo.baseFontColor;
+    // htmlBody[0].style.setProperty('--colorPanelBG', '#ff0000');
+
+    // var html = document.getElementsByTagName('html')[0];
+    // html.style.cssText = "--colorPanelBG: red";
     reColorUI();
   }
 
 function reColorUI(){
-  document.documentElement.style.setProperty('--colorPanelBG', '#ff0000');
+  document.documentElement.style.setProperty('--colorHover', 'red');
+  // YESSSSSS
 }
 
 
+var sheets = [].slice.call(document.styleSheets);
+sheets.forEach(function(e){
+  if (e.href.includes('adobeStyle.css')) {
+    var style = e.cssRules.style;
+    e.cssRules[1].style.setProperty('--colorPanelBG', 'red');
+    // console.log(e.cssRules[1].style);
+    // console.log(e.cssRules.style[0]);
 
-// var sheets = [].slice.call(document.styleSheets);
-// sheets.forEach(function(e){
-//   if (e.href.includes('adobeStyle.css')) {
-//     var style = e.cssRules.style;
-//     console.log(e.cssRules[1].style);
-//
-//     // e.cssRules[1].style.setProperty('--colorPanelBG', '#ff0000')
-//   }
-//
-// })
+    // e.cssRules[1].style.setProperty('--colorPanelBG', '#ff0000')
+  }
+
+})
 
   // var jsSheet = document.styleSheets[7];
   // var jsRules = jsSheet.cssRules;
@@ -70,8 +77,6 @@ function loadBorderWidth() {
     appInfo.borderWidth = "1.5px";
   }
 }
-
-
 
 
 
@@ -260,179 +265,3 @@ function onAppThemeColorChanged(event) {
     logSkin(skinInfo);
     console.log(`Theme changed to ${appInfo.theme}`);
 }
-
-
-
-
-
-
-
-
-
-var btns = document.getElementsByClassName('adobe-btn');
-btns = [].slice.call(btns);
-var btnTools = document.getElementsByClassName('adobe-btn-tool');
-btnTools = [].slice.call(btnTools);
-var inputNums = document.getElementsByClassName('adobe-inputGroup-num');
-inputNums = [].slice.call(inputNums);
-var inputs = document.getElementsByClassName('adobe-input');
-inputs = [].slice.call(inputs);
-var hideBtn = document.getElementsByClassName('adobe-hide');
-hideBtn = [].slice.call(hideBtn);
-var focusBtn = document.getElementsByClassName('adobe-focus');
-focusBtn = [].slice.call(focusBtn);
-var hoverBtn = document.getElementsByClassName('adobe-hover');
-hoverBtn = [].slice.call(hoverBtn);
-
-var btnCorner = document.getElementsByClassName('adobe-btn-corner');
-btnCorner = [].slice.call(btnCorner);
-var btnUpDown = document.getElementsByClassName('adobe-upDown');
-btnUpDown = [].slice.call(btnUpDown);
-
-function buildUI_OLD(){
-  btns.forEach(function(v,i,a) {
-    v.addEventListener("mouseover", function(event){
-      this.style.backgroundColor = appInfo.highlightColor;
-      this.style.borderColor = appInfo.borderColor;
-    }, false);
-    v.addEventListener("mouseout", function(event){
-      this.style.backgroundColor = 'transparent';
-      this.style.borderColor = 'transparent';
-    }, false);
-  });
-  btnTools.forEach(function(v,i,a) {
-    v.addEventListener("mouseover", function(event){
-      this.style.backgroundColor = appInfo.highlightColor;
-      this.style.borderColor = appInfo.borderColor;
-    }, false);
-    v.addEventListener("mouseout", function(event){
-      this.style.backgroundColor = 'transparent';
-      this.style.borderColor = 'transparent';
-    }, false);
-
-    var dropDown = document.createElement("div");
-    dropDown.classList.add("adobe-btn-corner");
-    dropDown.style.borderColor = appInfo.color;
-    dropDown.style.borderLeftColor = 'transparent';
-    dropDown.style.borderRightColor = 'transparent';
-    v.appendChild(dropDown);
-  });
-
-  inputNums.forEach(function(v,i,a) {
-    var upDown = document.createElement("div");
-    upDown.classList.add("adobe-upDown");
-    upDown.style.borderColor = appInfo.borderColor;
-    upDown.style.backgroundColor = appInfo.inputBGColorIdle;
-    var upDown_Up = document.createElement("div");
-    upDown_Up.classList.add("adobe-upDown-Up");
-    upDown_Up.style.color = appInfo.baseFontColor;
-    var iconUp = document.createElement("span");
-    iconUp.classList.add("fa");
-    iconUp.classList.add("fa-angle-up");
-    upDown_Up.appendChild(iconUp);
-    upDown.appendChild(upDown_Up);
-    var upDown_Down = document.createElement("div");
-    upDown_Down.classList.add("adobe-upDown-Down");
-    upDown_Down.style.color = appInfo.baseFontColor;
-    var iconDown = document.createElement("span");
-    iconDown.classList.add("fa");
-    iconDown.classList.add("fa-angle-down");
-    upDown_Down.appendChild(iconDown);
-    upDown.appendChild(upDown_Down);
-    v.appendChild(upDown);
-
-    var inputV = v.children;
-    inputV[0].addEventListener("focus", function(e){
-      var parent = e.target.parentNode;
-      var upDownLight = parent.children;
-      upDownLight[1].style.borderColor = appInfo.activeColor;
-    }, false);
-    inputV[0].addEventListener("blur", function(e){
-      var parent = e.target.parentNode;
-      var upDownLight = parent.children;
-      upDownLight[1].style.borderColor = appInfo.borderColor;
-    }, false);
-  });
-
-  inputs.forEach(function(v,i,a) {
-    v.addEventListener("focus", function(event){
-      this.style.backgroundColor = appInfo.inputBGColorActive;
-      this.style.borderColor = appInfo.activeColor;
-      this.style.color = appInfo.baseFontActiveColor;
-    }, false);
-    v.addEventListener("blur", function(event){
-      this.style.backgroundColor = appInfo.inputBGColorIdle;
-      this.style.borderColor = appInfo.borderColor;
-      this.style.color = appInfo.baseFontColor;
-    }, false);
-  });
-}
-
-
-
-
-function reColorUI_OLD(){
-  btns.forEach(function(v,i,a) {
-      v.style.borderWidth = appInfo.borderWidth;
-      v.style.color = appInfo.color;
-  });
-
-  btnCorner.forEach(function(v,i,a) {
-    dropDown.style.borderColor = appInfo.color;
-    dropDown.style.borderLeftColor = 'transparent';
-    dropDown.style.borderRightColor = 'transparent';
-  });
-
-  btnUpDown.forEach(function(v,i,a) {
-      v.style.color = appInfo.color;
-      v.style.borderColor = appInfo.borderColor;
-      v.style.backgroundColor = appInfo.inputBGColorIdle;
-  });
-
-  btnTools.forEach(function(v,i,a) {
-      v.style.borderWidth = appInfo.borderWidth;
-      v.style.color = appInfo.color;
-  });
-
-  inputs.forEach(function(v,i,a) {
-      v.style.borderWidth = appInfo.borderWidth;
-      v.style.backgroundColor = appInfo.inputBGColorIdle;
-      v.style.borderColor = appInfo.borderColor;
-      v.style.color = appInfo.baseFontColor;
-  });
-
-  hideBtn.forEach(function(v,i,a) {
-      v.style.borderColor = appInfo.borderColor;
-      v.style.backgroundColor = appInfo.disableColor
-      v.style.color = appInfo.baseFontDisabledColor;
-  });
-  focusBtn.forEach(function(v,i,a) {
-      v.style.borderColor = appInfo.borderColor;
-      v.style.backgroundColor = appInfo.selectColor;
-      v.style.color = appInfo.color;
-  });
-  hoverBtn.forEach(function(v,i,a) {
-      // console.log(v);
-      v.style.borderColor = appInfo.borderColor;
-      v.style.backgroundColor = appInfo.highlightColor;
-      v.style.color = appInfo.color;
-  });
-}
-
-// function callDoc() {
-// 	cs.evalScript(`doesExist()`, function(e){
-// 		if (e) {
-//       docExist = true;
-//       console.log(e);
-// 			cs.evalScript(`docName()`, function(b){
-//         console.log(b);
-//         var newData = b.split(",");
-// 				appInfo.doc = newData[0];
-//         appInfo.path = newData[1];
-// 			});
-// 		} else {
-//       docExist = false;
-// 			console.log(`No file is open yet`);
-// 		}
-// 	});
-// }
