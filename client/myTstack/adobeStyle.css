@@ -4,11 +4,13 @@ html {
 
 :root {
   --colorPanelBG: #323232;
-
+  --border: 1.5px solid transparent;
   --btnBorder: 1.5px solid transparent;
   --borderRadius: 3px;
+  --borderWidth: 1.5px;
 
-  --inputHeight: 2rem;
+  --inputPadding: 0rem .5rem;
+  --inputHeight: 1.5rem;
   --inputWidthMD: 3rem;
   --inputWidthLG: 4rem;
   --inputWidth1X: 100%;
@@ -16,6 +18,7 @@ html {
   --btnPadding: .0625rem .5rem;
   --btnMargin: auto .035rem;
   --btnHeight: 1.75rem;
+  --btnHeightMax: 25.17px;
   --btnWidth: 1.25rem;
 
   --fontSize: 10px;
@@ -30,7 +33,6 @@ html {
   --colorFont: #b7b7b7;
 
   --colorBorder: #3e3e3e;
-  /* --colorHoverBorder: #; */
   --colorHover: #292929;
   --colorActive: #1f1f1f;
   --colorFocus: #46a0f5;
@@ -40,7 +42,6 @@ html {
 body {
   margin: 0px 5%;
   overflow: hidden;
-
   background-color: var(--colorPanelBG);
   color: var(--colorIcon);
 }
@@ -49,9 +50,10 @@ body {
   margin-top: .93rem;
 }
 
-.divider {
+.adobe-toolbar-divider {
   margin: .125rem;
-  border-top: solid 1.5px #2a2a2a;
+  border-top: solid 1.33px var(--colorHover);
+  opacity: 0.6;
   width: 94%;
 }
 
@@ -63,24 +65,83 @@ body {
   border: var(--border);
 }
 
+#inputTest {
+  margin-top: .75rem;
+}
 
-.adobe-btn {
+.adobe-btn, .adobe-btn-switch, .adobe-btn-switch-off, .adobe-btn-switch-on, .adobe-btn-hover, .adobe-btn-active {
   padding: var(--btnPadding);
-  width: var(--btnWidth);
+  min-width: var(--btnWidth);
   height: var(--btnHeight);
+  max-height: var(--btnHeightMax);
   border: var(--btnBorder);
   margin: var(--btnMargin);
   user-select: none;
   cursor: pointer;
 }
 
-.adobe-btn:hover {
+
+.adobe-btn:hover, .adobe-btn-switch-off:hover, .adobe-btn-switch:hover {
   border-color: var(--colorBorder);
   background-color: var(--colorHover);
 }
 
-.adobe-btn:active {
+.adobe-btn:active, .adobe-btn-switch-off:active, .adobe-btn-switch:active {
+  border-color: var(--colorBorder);
   background-color: var(--colorActive);
+}
+
+
+
+.adobe-btn-hover {
+  border-width: var(--borderWidth);
+  border-color: var(--colorBorder);
+  background-color: var(--colorHover);
+}
+
+.adobe-btn-active {
+  border-color: var(--colorBorder);
+  background-color: var(--colorActive);
+}
+
+
+.adobe-btn-switch-on {
+  border-color: var(--colorBorder);
+  background-color: var(--colorActive);
+}
+
+.adobe-btn-switch-on {
+  border-color: var(--colorBorder);
+  background-color: var(--colorActive);
+}
+
+
+
+.adobe-input {
+  justify-content: flex-start;
+  border-style: solid;
+  background-color: var(--colorInputIdle);
+  font-size: 10px;
+  color: var(--colorFont);
+  border-width: var(--borderWidth);
+  border-color: var(--colorBorder);
+  border-radius: var(--borderRadius);
+  padding: var(--inputPadding);
+  height: var(--inputHeight);
+}
+
+.adobe-input-md {
+  width: 4rem;
+}
+
+.adobe-input:focus {
+  outline-offset: 0px;
+  background-color: var(--colorInputActive);
+  color: var(--colorFontActive);
+}
+
+:focus {
+  outline-width: 0px;
 }
 
 
@@ -196,15 +257,7 @@ body {
   margin-top: 4px;
 }
 
-.adobe-input {
-  display: flex;
-  flex-wrap: wrap;
-  border-style: solid;
-  border-width: 1.5px;
-  border-radius: var(--borderRadius);
-  padding: .25rem .5rem;
-  height: 1.75rem;
-}
+
 
 .adobe-input-md {
   width: 2.5rem;
@@ -256,13 +309,9 @@ body {
   width: 100%;
 }
 
-.adobe-input:focus {
-  outline-offset: 0px;
-}
 
-:focus {
-  outline-width: 0px;
-}
+
+
 
 .adobe-swatch {
   display: flex;

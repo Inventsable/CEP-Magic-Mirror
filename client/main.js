@@ -7,10 +7,10 @@ var appName = csInterface.hostEnvironment.appName;
 
 // callDoc();
 // buildUI();
-logSkin(appSkin);
-loadBorderWidth();
+// logSkin(appSkin);
+// loadBorderWidth();
 loadUniversalJSXLibraries();
 console.log(`Loading for ${appName}`);
 loadJSX(`${appName}.jsx`);
 
-console.log(appInfo);
+// console.log(appInfo);
