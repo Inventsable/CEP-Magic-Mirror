@@ -3,11 +3,13 @@ html {
 }
 
 :root {
+  --globalBorderWidth: 1.5px;
+  --borderRadius: 3px;
+  --borderWidth: 1.5px;
+
   --colorPanelBG: #323232;
   --border: 1.5px solid transparent;
   --btnBorder: 1.5px solid transparent;
-  --borderRadius: 3px;
-  --borderWidth: 1.5px;
 
   --inputPadding: 0rem .5rem;
   --inputHeight: 1.5rem;
@@ -65,16 +67,15 @@ body {
   border: var(--border);
 }
 
-#inputTest {
-  margin-top: .75rem;
-}
+
 
 .adobe-btn, .adobe-btn-switch, .adobe-btn-switch-off, .adobe-btn-switch-on, .adobe-btn-hover, .adobe-btn-active {
   padding: var(--btnPadding);
   min-width: var(--btnWidth);
   height: var(--btnHeight);
   max-height: var(--btnHeightMax);
-  border: var(--btnBorder);
+  border-width: var(--globalBorderWidth);
+  border-style: solid;
   margin: var(--btnMargin);
   user-select: none;
   cursor: pointer;
@@ -115,7 +116,18 @@ body {
   background-color: var(--colorActive);
 }
 
+.adobe-inputGroup {
+  /* border: 2px solid red; */
+  display: inline-block;
+  max-height: var(--inputHeight);
+}
 
+.adobe-inputGroup-suffix {
+  position: relative;
+  /* float: right; */
+  top: -1.4rem;
+  margin-left: 50%;
+}
 
 .adobe-input {
   justify-content: flex-start;
@@ -131,17 +143,24 @@ body {
 }
 
 .adobe-input-md {
-  width: 4rem;
+  width: 2rem;
 }
 
 .adobe-input:focus {
   outline-offset: 0px;
   background-color: var(--colorInputActive);
+  /* border-color: var(--colorActive); */
   color: var(--colorFontActive);
 }
 
 :focus {
   outline-width: 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 
@@ -155,7 +174,11 @@ body {
   align-items: center;
 }
 
-.adobe-toolbar-sm {
+
+
+
+
+/* .adobe-toolbar-sm {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -187,14 +210,6 @@ body {
   border-right-width: 0px;
 }
 
-.adobe-inputGroup-num {
-  display: flex;
-  flex-wrap: wrap;
-  width: auto;
-}
-
-
-
 .adobe-btn-toggle {
   padding-left: .5rem;
   padding-right: .5rem;
@@ -223,10 +238,10 @@ body {
   margin-left: .5rem;
   user-select: none;
   cursor: pointer;
-}
+} */
 
 
-.adobe-upDown {
+/* .adobe-upDown {
   padding-left: .25rem;
   padding-right: .25rem;
   margin-right: .5rem;
@@ -309,10 +324,6 @@ body {
   width: 100%;
 }
 
-
-
-
-
 .adobe-swatch {
   display: flex;
   justify-content: center;
@@ -331,4 +342,4 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   width: auto;
-}
+} */

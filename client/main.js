@@ -13,4 +13,7 @@ loadUniversalJSXLibraries();
 console.log(`Loading for ${appName}`);
 loadJSX(`${appName}.jsx`);
 
-// console.log(appInfo);
+console.log(appUI);
+
+// appUI.color.Hover = "red";
+// reColorUI();

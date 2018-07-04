@@ -6,11 +6,6 @@
     <link href="./myTstack/adobeStyle.css" type="text/css" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:300,400,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-    <!-- Custom Stylesheets -->
-    <!-- <link href="./style.css" type="text/css" rel="stylesheet"> -->
     <title>MagicMirror</title>
   </head>
   <body>
@@ -31,20 +26,34 @@
       <div class="adobe adobe-btn-switch">
         <span class="fa fa-user-secret fa-lg"></span>
       </div>
-      <div class="adobe adobe-btn-switch-on">
+      <div class="adobe adobe-btn-switch">
         <span class="fa fa-copy fa-lg"></span>
       </div>
       <div class="adobe adobe-btn-switch">
         <span class="fa fa-clipboard fa-lg"></span>
       </div>
-      <div class="adobe adobe-btn-hover">
+      <div class="adobe adobe-btn-switch">
         <span class="fa fa-bolt fa-lg"></span>
       </div>
-      <div class="adobe adobe-btn-active">
+      <div class="adobe adobe-btn-switch">
         <span class="fa fa-cut fa-lg"></span>
       </div>
+
       <div class="adobe-toolbar-divider"></div>
-      <input id="inputTest" class="adobe adobe-input adobe-input-md" type="text" name="test2" value="1 px">
+    </div>
+
+
+      <div class="adobe-inputGroup">
+        <span class="adobe-inputNumber">1</span> <span class="adobe-inputSuffix">px</span>
+      </div>
+
+      <!-- <input id="inputTest" class="adobe adobe-input adobe-input-md" type="number" name="test2" value="1 px"> -->
+
+      <div class="adobe-inputGroup">
+        <input id="inputTest" class="adobe adobe-input adobe-input-md" type="number" name="test2" value="1">
+        <span class="adobe-inputGroup-suffix">px</span>
+      </div>
+
 
 
 
@@ -56,7 +65,6 @@
       <input class="adobe-input adobe-hide adobe-input-md" id="input3" type="text" name="test3" value="hide">
     </div> -->
 
-  </div>
 
 <!-- Scripts -->
   <!-- required -->
