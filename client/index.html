@@ -3,15 +3,23 @@
   <head>
     <meta charset="utf-8">
     <link href="./myTstack/reset.css" type="text/css" rel="stylesheet">
+
+    <!-- adobeStyle here -->
     <link href="./myTstack/adobeStyle.css" type="text/css" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+
+    <!-- custom CSS stylesheet afterward -->
+    <link href="./style.css" type="text/css" rel="stylesheet">
+
+    <!-- FontAwesome Icons as placeholders -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+
     <title>MagicMirror</title>
   </head>
   <body>
 
   <div id="content" class="content">
 
+    <!-- Vertical toolbar mock of the main toolbar -->
     <div class="adobe-toolbar">
       <div class="adobe adobe-btn">
         <span class="fa fa-adjust fa-lg"></span>
@@ -23,7 +31,10 @@
       <div class="adobe adobe-btn-switch">
         <span class="fa fa-magnet fa-lg"></span>
       </div>
-      <div class="adobe adobe-btn-switch">
+
+      <!-- 'adobe-btn-switch' is a tool button, sets focus and clears all other foci -->
+      <!-- Can be switch-on or switch-off to set initial state, will still work -->
+      <div class="adobe adobe-btn-switch-on">
         <span class="fa fa-user-secret fa-lg"></span>
       </div>
       <div class="adobe adobe-btn-switch">
@@ -42,33 +53,10 @@
       <div class="adobe-toolbar-divider"></div>
     </div>
 
-      <!-- <div class="adobe-inputGroup">
-        <span class="adobe-inputNumber">1</span> <span class="adobe-inputSuffix">px</span>
-      </div> -->
-
-      <!-- <input id="inputTest" class="adobe adobe-input adobe-input-md" type="number" name="test2" value="1 px"> -->
-
-      <!-- <div class="adobe-inputGroup">
-        <input id="inputTest" class="adobe adobe-input adobe-input-md" type="number" name="test2" value="1">
-        <span class="adobe-inputGroup-suffix">px</span>
-      </div> -->
-
-    <!-- <div class="inputRow">
-      <div class="adobe-inputGroup-num">
-        <input class="adobe-input adobe-input-num" id="input1" type="text" name="test1" value="1 px">
-      </div>
-      <input class="adobe-input adobe-focus adobe-input-md" id="input2" type="text" name="test2" value="focus">
-      <input class="adobe-input adobe-hide adobe-input-md" id="input3" type="text" name="test3" value="hide">
-    </div> -->
-
 <!-- Scripts -->
   <!-- required -->
   <script src="./myTstack/CSInterface.js" type="text/javascript"></script>
-  <script src="./myTstack/ReqLibs.js" type="text/javascript"></script>
   <script src="./myTstack/magicMirror.js" type="text/javascript"></script>
-  <script src="./myTstack/eventManager.js" type="text/javascript"></script>
   <script src="./main.js" type="text/javascript"></script>
-  <script src="./myTstack/menu_Flyout.js" type="text/javascript"></script>
-  <script src="./myTstack/menu_Context.js" type="text/javascript"></script>
   </body>
 </html>

@@ -1,9 +1,6 @@
 html {
   font-size: 12px;
   font-family: Roboto, sans-serif;
-  --nav-color: #161616;
-  --bg-color: #232323;
-  background-color: var(--bg-color);
 }
 
 #content {
