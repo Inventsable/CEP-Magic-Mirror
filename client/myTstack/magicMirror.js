@@ -10,7 +10,7 @@ function init(){
   loadBorderWidth();
   callDoc();
   cs.addEventListener(CSInterface.THEME_COLOR_CHANGED_EVENT, onAppThemeColorChanged);
-  cs.addEventListener('documentAfterActivate', callDoc);
+  cs.addEventListener('documentAfterActivate', reset);
   cs.addEventListener('applicationActive', callDoc);
   appUI.data.name = cs.hostEnvironment.appName;
   if (navigator.platform.indexOf('Win') > -1) {
@@ -20,6 +20,12 @@ function init(){
   }
 
   buildUI();
+  console.log(appUI);
+}
+
+function reset(){
+  // console.log("reload!");
+  location.reload();
 }
 
 function callDoc() {
@@ -31,13 +37,12 @@ function callDoc() {
       })
     })
   }
-  console.log(appUI.data);
+  // console.log(appUI.data);
 }
 
 function updateThemeWithAppSkinInfo() {
     reColorUI();
   }
-
 
 const appUI = {
   global : {
@@ -98,6 +103,9 @@ function reColorUI(){
   }
 }
 
+
+
+// @ Rebuild this using SwitchClass
 function buildUI(){
   var btnToggles = ['switch', 'switch-on', 'switch-off'];
   for (var i = 0; i < btnToggles.length; i++) {
@@ -135,36 +143,24 @@ function buildUI(){
   });
 }
 
-function addWheelScrollTo(v, target) {
-  v.addEventListener("mouseover", function(evtTier){
-    console.log(evtTier);
-  });
-  v.addEventListener("wheel", function(evt){
-    var newNum = target.textContent;
-    if (evt.deltaY < 0) {
-      newNum++;
-    } else {
-      newNum--;
-    }
-    console.log(evt);
-    target.textContent = newNum;
-  }, false)
-}
-
-  // var scrollCount = 1;
-  //   window.addEventListener('mousewheel', function(e){
-  //
-  //     if(e.wheelDelta<0 && scrollCount<5){
-  //       scrollCount++;
-  //     }
-  //
-  //     else if(e.wheelDelta>0 && scrollCount>1){
-  //       scrollCount--;
-  //     }
-  //     document.querySelector('.number').innerHTML = scrollCount;
-  //   })
+// function addWheelScrollTo(v, target) {
+//   v.addEventListener("mouseover", function(evtTier){
+//     console.log(evtTier);
+//   });
+//   v.addEventListener("wheel", function(evt){
+//     var newNum = target.textContent;
+//     if (evt.deltaY < 0) {
+//       newNum++;
+//     } else {
+//       newNum--;
+//     }
+//     console.log(evt);
+//     target.textContent = newNum;
+//   }, false)
+// }
 
 
+// This is awful, rebuild with switchClass
 function toolbarToggle(elt) {
   var btnToggles = ['switch', 'switch-on', 'switch-off'];
   var toolbar = [].slice.call(document.getElementsByClassName('adobe-toolbar'));
@@ -379,32 +375,3 @@ function onAppThemeColorChanged(event) {
     logSkin(skinInfo);
     console.log(`Theme changed to ${appUI.data.theme}`);
 }
-
-
-
-// for (value in appUI.color) {
-//   console.log('--color' + value, appUI.color);
-// }
-
-// $$$ // document.documentElement.style.setProperty('--color' + value, 'red');
-
-// var sheets = [].slice.call(document.styleSheets);
-// sheets.forEach(function(e){
-//   if (e.href.includes('adobeStyle.css')) {
-//     var style = e.cssRules.style;
-//     e.cssRules[1].style.setProperty('--colorPanelBG', 'red');
-//     // console.log(e.cssRules[1].style);
-//     // console.log(e.cssRules.style[0]);
-//
-//     // e.cssRules[1].style.setProperty('--colorPanelBG', '#ff0000')
-//   }
-//
-// })
-
-  // var jsSheet = document.styleSheets[7];
-  // var jsRules = jsSheet.cssRules;
-  // console.log(sheet);
-//   for (var i = 0; i < document.styleSheets.length; i++){
-//
-//   }
-// }

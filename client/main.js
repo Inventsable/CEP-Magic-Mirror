@@ -5,15 +5,7 @@ var logPath = sysPath + "/log/";
 var hostPath = sysPath + "/host/";
 var appName = csInterface.hostEnvironment.appName;
 
-// callDoc();
-// buildUI();
-// logSkin(appSkin);
-// loadBorderWidth();
 loadUniversalJSXLibraries();
 console.log(`Loading for ${appName}`);
 loadJSX(`${appName}.jsx`);
-
 console.log(appUI);
-
-// appUI.color.Hover = "red";
-// reColorUI();
