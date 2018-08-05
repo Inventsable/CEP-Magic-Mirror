@@ -1,4 +1,9 @@
 ## MagicMirror
+
+Updated to mightyLayers:
+
+![mightyLayers](https://thumbs.gfycat.com/VerifiableConstantDwarfmongoose-size_restricted.gif)
+
 Framework for easily creating native-looking Adobe controls:
 
 ![Toolbar](https://thumbs.gfycat.com/ScratchyGoodBarebirdbat-size_restricted.gif)

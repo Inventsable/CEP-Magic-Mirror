@@ -19,6 +19,14 @@ html {
   /* height: var(--panelHeight); */
 }
 
+.adobe-layerNest {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .adobe-layerRow {
 width: 100%;
 display: flex;
@@ -42,7 +50,8 @@ align-items: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 50%;
+  max-width: 80%;
+  min-width: 5rem;
   /* margin: var(--layerSpacing); */
 }
 
@@ -52,6 +61,7 @@ align-items: center;
   align-items: center;
   width: 1.25rem;
   height: var(--inputHeight);
+  cursor: pointer;
 }
 
 .adobe-layerLock {
@@ -76,6 +86,8 @@ align-items: center;
   margin-left: calc(var(--layerSpacing) * 1.5);
   /* margin-right: calc(var(--spacingUnit) * .5); */
 }
+
+
 
 .adobe-layerTag-Alt {
   width: .3rem;
@@ -138,6 +150,7 @@ align-items: center;
   align-items: center;
   font-size: 15px;
   margin: var(--layerSpacing);
+  cursor: pointer;
 }
 
 .active {
@@ -146,6 +159,7 @@ align-items: center;
 
 .adobe-checkToggle {
   margin-right: .25rem;
+  cursor: pointer;
 }
 
 .checkToggle-Big {
