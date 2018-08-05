@@ -1,14 +1,211 @@
 html {
   font-size: 12px;
   font-family: Roboto, sans-serif;
+  --layerSpacing: 0px .25rem;
+  --spacingUnit: .25rem;
+  --panelHeight: 160px;
+  --colorSelect: #374E63;
 }
 
 #content {
   margin: 1rem 0px;
 }
 
+.adobe-layerGroup {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow-y: scroll;
+  /* height: var(--panelHeight); */
+}
+
+.adobe-layerRow {
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+}
+
+.adobe-layerParent {
+  border: var(--borderWidth) solid var(--colorBorder);
+}
+
+.adobe-layerChild {
+  border-width: 0px var(--borderWidth) var(--borderWidth) var(--borderWidth);
+  border-style: solid;
+  border-color: var(--colorBorder);
+}
+
+.adobe-layerPrefix {
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 50%;
+  /* margin: var(--layerSpacing); */
+}
+
+.adobe-layerHide, .adobe-layerLock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.25rem;
+  height: var(--inputHeight);
+}
+
+.adobe-layerLock {
+  padding-right: calc(var(--spacingUnit) * .375);
+}
+
+.adobe-layerHide {
+  display: flex;
+  justify-content: center;
+  border-right-width: var(--borderWidth);
+  border-right-color: var(--colorBorder);
+  border-right-style: solid;
+  padding-right: .25rem;
+  margin: var(--layerSpacing);
+}
+
+.adobe-layerTag {
+  width: .3rem;
+  height: var(--inputHeight);
+  border: var(--borderWidth) solid var(--colorBorder);
+  background-color: #4f80ff;
+  margin-left: calc(var(--layerSpacing) * 1.5);
+  /* margin-right: calc(var(--spacingUnit) * .5); */
+}
+
+.adobe-layerTag-Alt {
+  width: .3rem;
+  height: var(--inputHeight);
+  border: var(--borderWidth) solid var(--colorBorder);
+  background-color: #ff4f4f;
+  margin-left: calc(var(--layerSpacing) * 1.5);
+  /* margin-right: calc(var(--spacingUnit) * .5); */
+}
+
+.adobe-layerDrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .25rem;
+  margin-right: var(--spacingUnit);
+}
+
+.adobe-layerPreview {
+  height: calc(var(--inputHeight) * .85);
+  width: calc(var(--inputHeight) * .85);
+  border: 1.5px solid black;
+  margin: var(--layerSpacing);
+  background-color: white;
+}
+
+.adobe-layerLabel {
+  /* border: 2px solid red; */
+  color: #e0e0e0;
+  margin-left: calc(var(--spacingUnit) * 1.5);
+  font-size: 10px;
+  cursor: default;
+}
+
+.adobe-layerTab {
+  height: calc(var(--inputHeight) * .85);
+  width: calc(var(--inputHeight));
+  border: .75px solid transparent;
+  margin: var(--layerSpacing);
+}
+
+
+
+.adobe-layerSuffix {
+  border: 2px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 3rem;
+  font-size: 12px;
+  height: var(--inputHeight);
+  border-left: var(--borderWidth) solid var(--colorBorder);
+  border-width: 0px 0px 0px var(--borderWidth);
+}
+
+.adobe-layerRadio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  margin: var(--layerSpacing);
+}
+
+.active {
+  background-color: var(--colorSelect);
+}
+
+.adobe-checkToggle {
+  margin-right: .25rem;
+}
+
+.checkToggle-Big {
+  /* margin-right: calc(var(--spacingUnit) + .5rem); */
+  margin-right: .25rem;
+  width: calc(var(--inputHeight)/3.25);
+  height: calc(var(--inputHeight)/3.25);
+  border: 1.35px solid black;
+  background-color: #4f80ff;
+}
+
+.checkToggle-Big-Alt {
+  /* margin-right: calc(var(--spacingUnit) + .5rem); */
+  margin-right: .25rem;
+  width: calc(var(--inputHeight)/3.25);
+  height: calc(var(--inputHeight)/3.25);
+  border: 1.35px solid black;
+  background-color: #ff4f4f;
+}
+
+
+
+.checkToggle-Small {
+  margin-right: var(--spacingUnit);
+  width: calc(var(--inputHeight)/4);
+  height: calc(var(--inputHeight)/4);
+  border: 1.5px solid black;
+  background-color: #4f80ff;
+}
+
+
 .inputRow {
+  width: 100%;
+  border: 2px solid red;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+a[data-tool-tip] {
+  position: relative;
+}
+
+a[data-tool-tip]::after {
+  content: attr(data-tool-tip);
+  display: block;
+  position: absolute;
+  background-color: red;
+  color: white;
+  padding: .25rem .5rem;
+  border-radius: 3px;
+  border: 2px solid black;
+  top: 100%;
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform var(--quart) 120ms;
+}
+
+a[data-tool-tip]:hover::after {
+  transform: scale(1);
+  opacity: 1;
 }

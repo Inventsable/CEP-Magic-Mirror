@@ -22,41 +22,107 @@
     <!-- Vertical toolbar mock of the main toolbar -->
     <div class="adobe-toolbar">
       <div class="adobe adobe-btn">
-        <span class="fa fa-adjust fa-lg"></span>
+        <span class="adobe-icon-stroke"></span>
       </div>
       <div class="adobe adobe-btn">
-        <span class="fa fa-magic fa-lg"></span>
+        <span class="adobe-icon-fill"></span>
+      </div>
+      <div class="adobe adobe-btn">
+        <span class="adobe-icon-file"></span>
+      </div>
+      <div class="adobe adobe-btn">
+        <span class="adobe-icon-folder"></span>
       </div>
       <div class="adobe-toolbar-divider"></div>
-      <div class="adobe adobe-btn-switch">
-        <span class="fa fa-magnet fa-lg"></span>
-      </div>
 
       <!-- 'adobe-btn-switch' is a tool button, sets focus and clears all other foci -->
       <!-- Can be switch-on or switch-off to set initial state, will still work -->
       <div class="adobe adobe-btn-switch-on">
-        <span class="fa fa-user-secret fa-lg"></span>
+        <span class="adobe-icon-assetExport"></span>
       </div>
       <div class="adobe adobe-btn-switch">
-        <span class="fa fa-copy fa-lg"></span>
+        <span class="adobe-icon-find"></span>
       </div>
       <div class="adobe adobe-btn-switch">
-        <span class="fa fa-clipboard fa-lg"></span>
+        <span class="adobe-icon-newLayer"></span>
       </div>
       <div class="adobe adobe-btn-switch">
-        <span class="fa fa-bolt fa-lg"></span>
-      </div>
-      <div class="adobe adobe-btn-switch">
-        <span class="fa fa-cut fa-lg"></span>
+        <span class="adobe-icon-trash"></span>
       </div>
 
       <div class="adobe-toolbar-divider"></div>
+
+      <div class="adobe-toolbar">
+        <div class="adobe checkTest">
+          <div id="check" class="adobe adobe-checkboxGroup">
+            <span class="adobe-icon-checkBoxOff"></span>
+            <span class="adobe-checkbox-suffix">Check</span>
+          </div>
+          <div id="check" class="adobe adobe-checkboxGroup">
+            <span class="adobe-icon-checkBoxOn"></span>
+            <span class="adobe-checkbox-suffix">Check</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="adobe-toolbar-divider"></div>
+
+      <!-- <a href="#" >dolor sit amet</a> -->
+
+      <div class="adobe-toolbar">
+        <!-- <div class="inputRow"> -->
+          <div class="adobe-inputGroup-num">
+            <input class="adobe adobe-input adobe-input-num" type="text" name="strokeWidth" value="1 px">
+
+            <div class="adobe-input-numUpDown">
+              <div class="numUpDownHalf">
+                <span class="adobe-icon-angleUp"></span>
+              </div>
+              <div class="numUpDownHalf">
+                <span class="adobe-icon-angleDown"></span>
+              </div>
+              <!-- <span class="adobe-icon-angleDown"></span> -->
+            </div>
+            <!-- <a href="#" data-tool-tip="hello World"> -->
+            <!-- </a> -->
+          </div>
+        </div>
+
+
+      <div id="test" class="adobe-toolbar">
+        <span class="adobe-menu">Option <span class="adobe-icon-angleDown"></span></span>
+        <ul class="adobe-menuGroup">
+          <li>Name</li>
+          <li>Color</li>
+          <li>Expression</li>
+        </ul>
+      </div>
+
+        <!-- </div> -->
+      <div class="adobe-toolbar">
+        <div class="inputRow">
+          <div class="adobe-inputGroup">
+            <span class="adobe-input-prepend">Font:</span>
+            <input class="adobe-input adobe-input-md" type="text" name="FontFamily" value="Adobe Clean">
+          </div>
+        </div>
+      </div>
+
+
+
+
     </div>
 
 <!-- Scripts -->
   <!-- required -->
   <script src="./myTstack/CSInterface.js" type="text/javascript"></script>
+  <script src="./myTstack/ReqLibs.js" type="text/javascript"></script>
+  <script src="./myTstack/mightyFunctions.js" type="text/javascript"></script>
+  <script src="./myTstack/mightyFiles.js" type="text/javascript"></script>
   <script src="./myTstack/magicMirror.js" type="text/javascript"></script>
+  <script src="./myTstack/eventManager.js" type="text/javascript"></script>
   <script src="./main.js" type="text/javascript"></script>
+  <script src="./myTstack/menu_Flyout.js" type="text/javascript"></script>
+  <script src="./myTstack/menu_Context.js" type="text/javascript"></script>
   </body>
 </html>
