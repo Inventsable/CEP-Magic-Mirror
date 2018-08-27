@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionList>
-    <Extension Id="com.magicmirror.window">
+    <Extension Id="com.magicmirror.panel">
         <HostList>
             <Host Name="ILST" Port="5000"/>
             <Host Name="AEFT" Port="5001"/>

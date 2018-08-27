@@ -3,7 +3,6 @@
 <ExtensionManifest ExtensionBundleId="com.magicmirror" ExtensionBundleVersion="1.0.0" Version="7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ExtensionList>
     <Extension Id="com.magicmirror.panel" Version="1.0.5" />
-    <!-- <Extension Id="com.magicmirror.window" Version="1.0.0" /> -->
   </ExtensionList>
   <ExecutionEnvironment>
     <HostList>
@@ -53,44 +52,11 @@
               <Width>70</Width>
             </MinSize>
           </Geometry>
-          <Icons>
-             <Icon Type="Normal">./icons/iconLight.png</Icon>
-             <Icon Type="RollOver">./icons/iconLight.png</Icon>
-          </Icons>
+          <Icons />
         </UI>
       </DispatchInfo>
     </Extension>
   </DispatchInfoList>
-  <!-- <DispatchInfoList>
-    <Extension Id="com.magicmirror.window">
-      <DispatchInfo>
-        <Resources>
-          <MainPath>./client/layers.html</MainPath>
-          <CEFCommandLine />
-        </Resources>
-        <Lifecycle>
-          <AutoVisible>true</AutoVisible>
-        </Lifecycle>
-        <UI>
-          <Type>Panel</Type>
-          <Menu>mightyLayers</Menu>
-          <Geometry>
-            <Size>
-              <Height>160</Height>
-              <Width>300</Width>
-            </Size>
-            <MaxSize>
-              <Height>280</Height>
-              <Width>600</Width>
-            </MaxSize>
-            <MinSize>
-              <Height>40</Height>
-              <Width>70</Width>
-            </MinSize>
-          </Geometry>
-          <Icons />
-        </UI>
-      </DispatchInfo> -->
-    <!-- </Extension>
-  </DispatchInfoList> -->
+    </Extension>
+  </DispatchInfoList>
 </ExtensionManifest>

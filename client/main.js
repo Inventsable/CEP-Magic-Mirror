@@ -10,10 +10,15 @@ console.log(appUI);
 
 console.log(`The panel background is ${appUI.color.PanelBG}`);
 
-openSidePanel();
+// openSidePanel();
+// function openSidePanel(){
+//   var extensin_Id = "com.magicmirror.window";
+//   var params = {};
+//   window.__adobe_cep__.requestOpenExtension(extensin_Id , params );
+// }
 
-function openSidePanel(){
-  var extensin_Id = "com.magicmirror.window";
-  var params = {};
-  window.__adobe_cep__.requestOpenExtension(extensin_Id , params );
+function debugCSS(){
+  for(i=0;A=document.querySelectorAll("_")[i++];)A.style.outline="1px solid hsl("+(A+A).length_9+",99%,50%)";
 }
+
+debugCSS();

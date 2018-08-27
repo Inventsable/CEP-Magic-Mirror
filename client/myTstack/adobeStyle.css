@@ -490,16 +490,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 .adobe-checkboxGroup {
   cursor: pointer;
-  margin: .5rem .25rem;
+  margin: .25rem 0px;
   padding: .25rem;
 }
 
 .adobe-icon-checkBoxOn, .adobe-icon-checkBoxOff {
-  margin-left: .5rem;
+  /* margin-left: .5rem; */
 }
 
 .adobe-checkToggle {
-  margin-left: .25rem;
+  /* margin-left: .25rem; */
   width: calc(var(--inputHeight)/3);
   height: calc(var(--inputHeight)/3);
   border: 1.5px solid black;
