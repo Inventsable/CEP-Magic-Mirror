@@ -1,5 +1,7 @@
 ## MagicMirror
 
+# Update 4/28/21 - This has been replaced by [brutalism](https://github.com/battleaxedotco/brutalism)
+
 Updated to mightyLayers:
 
 ![mightyLayers](https://thumbs.gfycat.com/VerifiableConstantDwarfmongoose-size_restricted.gif)
